@@ -1,0 +1,36 @@
+{
+    "name": "polgarz/evolun-kid",
+    "description": "Kid extension for Evolun",
+    "keywords": ["evolun", "kid", "volunteering system", "volunteering", "volunteer"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/polgarz/evolun-kid/issues",
+        "source": "https://github.com/polgarz/evolun-kid"
+    },
+    "authors": [
+        {
+            "name": "Polgar Zoltan",
+            "email": "pzoltan@pzoltan.hu",
+            "homepage": "https://www.evolun.hu/"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2-imagine": "^2.2",
+        "mohorev/yii2-upload-behavior": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "unclead/yii2-multiple-input": "~2.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "evolun\\kid\\": ""
+        }
+    }
+}
