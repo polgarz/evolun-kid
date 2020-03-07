@@ -33,6 +33,14 @@ class KidGroup extends \yii\db\ActiveRecord
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'name' => Yii::t('kid/group', 'Name'),
+            'order' => Yii::t('kid/group', 'Order'),
+        ];
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
