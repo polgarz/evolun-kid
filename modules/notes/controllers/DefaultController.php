@@ -46,7 +46,7 @@ class DefaultController extends Controller
                         'actions' => ['create', 'delete'],
                         'allow'   => true,
                         'roles'   => ['manageKids'],
-                        'roleParams' => function($rule) {
+                        'roleParams' => function ($rule) {
                             return ['kid' => $this->getKid()];
                         }
                     ],

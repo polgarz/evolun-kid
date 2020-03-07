@@ -15,19 +15,19 @@ class KidForm extends Kid
      * A csoportjai listaja
      * @var array
      */
-    private $groups;
+    private $_groups;
 
     /**
      * A felelosok
      * @var array
      */
-    private $responsibles;
+    private $_responsibles;
 
     /**
      * Az extra mezok
      * @var array
      */
-    private $extraFields;
+    private $_extraFields;
 
     /**
      * Torolje-e a profil kepet?
@@ -129,7 +129,7 @@ class KidForm extends Kid
      * @param  array  $attributeNames milyen mezőkre?
      * @return boolean
      */
-    public function save($runValidation = true, $attributeNames = NULL)
+    public function save($runValidation = true, $attributeNames = null)
     {
         if (parent::save($runValidation, $attributeNames)) {
             if (!$this->isNewRecord) {
@@ -139,7 +139,7 @@ class KidForm extends Kid
             }
 
             if (!empty($this->groups)) {
-                foreach($this->groups as $group) {
+                foreach ($this->groups as $group) {
                     $kidGroupKid = new KidGroupKid(['kid_group_id' => $group, 'kid_id' => $this->id]);
                     if ($kidGroupKid->validate()) {
                         $this->link('kidGroupKids', $kidGroupKid);
@@ -148,7 +148,7 @@ class KidForm extends Kid
             }
 
             if (!empty($this->responsibles)) {
-                foreach($this->responsibles as $responsible) {
+                foreach ($this->responsibles as $responsible) {
                     $responsibleUser = new ResponsibleUser(['responsible_id' => $responsible['responsible_id'] ?? null, 'user_id' => $responsible['user_id'] ?? null, 'kid_id' => $this->id]);
                     if ($responsibleUser->validate()) {
                         $this->link('responsibleUsers', $responsibleUser);
@@ -157,7 +157,7 @@ class KidForm extends Kid
             }
 
             if (!empty($this->extraFields)) {
-                foreach($this->extraFields as $id => $value) {
+                foreach ($this->extraFields as $id => $value) {
                     $extraField = new ExtraFieldValue(['kid_extra_field_id' => $id, 'value' => $value, 'kid_id' => $this->id]);
                     if ($extraField->validate()) {
                         $this->link('extraFieldValues', $extraField);
@@ -175,8 +175,8 @@ class KidForm extends Kid
      */
     public function getExtraFields()
     {
-        if (isset($this->extraFields)) {
-            return $this->extraFields;
+        if (isset($this->_extraFields)) {
+            return $this->_extraFields;
         }
 
         return ExtraFieldValue::find()
@@ -193,7 +193,7 @@ class KidForm extends Kid
      */
     public function setExtraFields($extraFields)
     {
-        $this->extraFields = $extraFields;
+        $this->_extraFields = $extraFields;
     }
 
     /**
@@ -202,8 +202,8 @@ class KidForm extends Kid
      */
     public function getResponsibles()
     {
-        if (isset($this->responsibles)) {
-            return $this->responsibles;
+        if (isset($this->_responsibles)) {
+            return $this->_responsibles;
         }
 
         return ResponsibleUser::find()
@@ -219,7 +219,7 @@ class KidForm extends Kid
      */
     public function setResponsibles($responsibles)
     {
-        $this->responsibles = $responsibles;
+        $this->_responsibles = $responsibles;
     }
 
     /**
@@ -228,8 +228,8 @@ class KidForm extends Kid
      */
     public function getGroups()
     {
-        if (isset($this->groups)) {
-            return $this->groups;
+        if (isset($this->_groups)) {
+            return $this->_groups;
         }
 
         return ArrayHelper::getColumn($this->kidGroupKids, 'kid_group_id');
@@ -241,7 +241,6 @@ class KidForm extends Kid
      */
     public function setGroups($groups)
     {
-        $this->groups = $groups;
+        $this->_groups = $groups;
     }
-
 }

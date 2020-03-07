@@ -44,7 +44,7 @@ class DefaultController extends Controller
                         'actions' => ['upload', 'delete', 'rotate'],
                         'allow'   => true,
                         'roles'   => ['manageKids'],
-                        'roleParams' => function($rule) {
+                        'roleParams' => function ($rule) {
                             return ['kid' => $this->getKid()];
                         }
                     ],
@@ -145,7 +145,7 @@ class DefaultController extends Controller
         $images = KidImage::findAll(['kid_id' => $id]);
         $return = [];
 
-        foreach($images as $image) {
+        foreach ($images as $image) {
             $return[] = [
                 'id' => $image->id,
                 'imageUrl' => $image->getUploadUrl('image') . '?' . time(),

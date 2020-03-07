@@ -1,6 +1,7 @@
 <?php
 namespace evolun\kid\widgets;
 
-interface KidWidgetInterface {
+interface KidWidgetInterface
+{
     public function getKid();
 }

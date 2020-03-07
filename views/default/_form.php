@@ -88,7 +88,7 @@ use unclead\multipleinput\MultipleInputColumn;
             </div>
 
             <div class="box-body">
-                <?php foreach($extraFields as $extraField): ?>
+                <?php foreach ($extraFields as $extraField): ?>
                     <?php if ($extraField->type == 'textarea'): ?>
                         <?= $form->field($model, "extraFields[{$extraField->id}]")->textArea(['rows' => 3])->label($extraField->name) ?>
                     <?php endif ?>
@@ -120,7 +120,7 @@ use unclead\multipleinput\MultipleInputColumn;
                     ],
                 ]
             ])->label(false)
-            ?>
+?>
 
         </div>
     </div>

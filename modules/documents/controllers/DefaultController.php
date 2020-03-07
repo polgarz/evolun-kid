@@ -46,7 +46,7 @@ class DefaultController extends Controller
                         'actions' => ['upload', 'delete', 'rotate'],
                         'allow'   => true,
                         'roles'   => ['manageKids'],
-                        'roleParams' => function($rule) {
+                        'roleParams' => function ($rule) {
                             return ['kid' => $this->getKid()];
                         }
                     ],
@@ -151,7 +151,7 @@ class DefaultController extends Controller
         $documents = KidDocument::findAll(['kid_id' => $id]);
         $return = [];
 
-        foreach($documents as $document) {
+        foreach ($documents as $document) {
             $return[] = [
                 'id' => $document->id,
                 'name' => $document->name,

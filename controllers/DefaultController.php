@@ -37,7 +37,7 @@ class DefaultController extends Controller
                         'actions' => ['create', 'update', 'delete'],
                         'allow'   => true,
                         'roles'   => ['manageKids'],
-                        'roleParams' => function($rule) {
+                        'roleParams' => function ($rule) {
                             $kidModel = $this->module->kidModelClass;
                             $kid = $kidModel::findOne(Yii::$app->request->get('id'));
 
@@ -83,7 +83,7 @@ class DefaultController extends Controller
         $model = $this->findModel($id);
 
         if ($this->module->modules) {
-            foreach($this->module->modules as $id => $module) {
+            foreach ($this->module->modules as $id => $module) {
                 $module = $this->module->getModule($id);
 
                 if (!$module instanceof KidSubModule) {

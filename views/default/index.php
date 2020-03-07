@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'attribute' => 'name',
                     'format' => 'raw',
-                    'value' => function($model) {
+                    'value' => function ($model) {
                         $summary = [];
                         if ($model->age !== null) {
                             $summary[] = Yii::t('kid', '{age} years old', ['age' => $model->age]);

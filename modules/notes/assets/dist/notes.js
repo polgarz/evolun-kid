@@ -16,11 +16,11 @@ var notes = new Vue({
         },
         errors: [],
     },
-    created: function() {
+    created: function () {
         this.loadData();
     },
     methods: {
-        loadData: function(page) {
+        loadData: function (page) {
             this.errors = [];
             this.$http.get(noteListUrl, {
                 params: { page : page }
@@ -32,7 +32,7 @@ var notes = new Vue({
                 this.errors.push("There was an error while tried to load notes");
             });
         },
-        createNote: function(event) {
+        createNote: function (event) {
             this.errors = [];
 
             var formData = new FormData();
@@ -54,7 +54,7 @@ var notes = new Vue({
                 this.errors.push("Publication failed");
             });
         },
-        deleteNote: function(event, id) {
+        deleteNote: function (event, id) {
             event.preventDefault();
 
             if (confirm("Are you sure?")) {

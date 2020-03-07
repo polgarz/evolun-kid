@@ -5,11 +5,11 @@ var gallery = new Vue({
         error: null,
         uploadInProgress: false,
     },
-    created: function() {
+    created: function () {
         this.loadData();
     },
     methods: {
-        deleteImage: function(id) {
+        deleteImage: function (id) {
             if (confirm("Are you sure?")) {
                 var formData = new FormData();
                 formData.append("image_id", id);
@@ -26,7 +26,7 @@ var gallery = new Vue({
                 });
             }
         },
-        rotateImage: function(id, degree) {
+        rotateImage: function (id, degree) {
                 var formData = new FormData();
                 formData.append("image_id", id);
                 formData.append("degree", degree);
@@ -42,7 +42,7 @@ var gallery = new Vue({
                     this.error = "Rotate unsuccessful";
                 });
         },
-        uploadImage: function(e) {
+        uploadImage: function (e) {
             var formData = new FormData();
             formData.append("KidImage[image]", e.target.files[0]);
             formData.append(yii.getCsrfParam(), yii.getCsrfToken());
@@ -59,7 +59,7 @@ var gallery = new Vue({
                 this.uploadInProgress = false;
             });
         },
-        loadData: function() {
+        loadData: function () {
             this.$http.get(galleryImagesUrl).then((response) => {
                 if (!!response.body) {
                     this.images = response.body;

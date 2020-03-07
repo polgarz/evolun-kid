@@ -71,7 +71,7 @@ $this->params['pageHeader'] = ['title' => '&nbsp;'];
         </div>
 
         <?php if (!empty(Yii::$app->controller->module->widgets)): ?>
-            <?php foreach(Yii::$app->controller->module->widgets as $widget): ?>
+            <?php foreach (Yii::$app->controller->module->widgets as $widget): ?>
                 <?= $widget::widget(['kid' => $model]) ?>
             <?php endforeach ?>
         <?php endif ?>
@@ -80,7 +80,7 @@ $this->params['pageHeader'] = ['title' => '&nbsp;'];
     <!-- right col -->
     <div class="col-lg-9 col-md-8">
         <?php if ($modules): ?>
-            <?php foreach($modules as $id => $module): ?>
+            <?php foreach ($modules as $id => $module): ?>
                 <?php $items[] = ['label' => $module['title'], 'content' => $module['content']] ?>
             <?php endforeach ?>
 

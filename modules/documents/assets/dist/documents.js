@@ -9,14 +9,14 @@ var documents = new Vue({
         errors: [],
         progress: false,
     },
-    created: function() {
+    created: function () {
         this.loadData();
     },
     methods: {
         processFile(event) {
             this.form.file = event.target.files[0]
         },
-        uploadDocument: function(event) {
+        uploadDocument: function (event) {
             this.errors = [];
             this.progress = true;
 
@@ -40,7 +40,7 @@ var documents = new Vue({
                 this.progress = false;
             });
         },
-        deleteDocument: function(event, id) {
+        deleteDocument: function (event, id) {
             event.preventDefault();
 
             if (confirm("Are you sure?")) {
@@ -59,7 +59,7 @@ var documents = new Vue({
                 });
             }
         },
-        loadData: function() {
+        loadData: function () {
             this.errors = [];
             this.$http.get(documentListUrl).then((response) => {
                 if (!!response.body) {

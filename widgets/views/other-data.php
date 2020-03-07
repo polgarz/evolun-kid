@@ -24,7 +24,7 @@ use yii\helpers\Html;
             </div>
         <?php endif ?>
 
-        <?php foreach($kid->extraFieldValues as $extraFieldValue): ?>
+        <?php foreach ($kid->extraFieldValues as $extraFieldValue): ?>
             <hr />
             <strong><?= $extraFieldValue->extraField->name ?></strong>
             <p class="text-muted">

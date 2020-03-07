@@ -13,7 +13,7 @@ use yii\helpers\Url;
                         <b><?= $responsible->responsible->name ?></b> <a href="<?= Url::to(['/user/default/view', 'id' => $responsible->user_id]) ?>" class="pull-right"><?= $responsible->user->name ?></a>
                     </li>
                 <?php endforeach ?>
-            <ul class="list-group list-group-unbordered">
+            </ul>
         </div>
     </div>
 <?php endif ?>

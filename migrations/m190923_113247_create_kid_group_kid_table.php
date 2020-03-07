@@ -20,7 +20,6 @@ class m190923_113247_create_kid_group_kid_table extends Migration
 
         $this->addForeignKey('fk_kid_group_kid_kid_group_id', '{{%kid_group_kid}}', 'kid_group_id', '{{%kid_group}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey('fk_kid_group_kid_id', '{{%kid_group_kid}}', 'kid_id', '{{%kid}}', 'id', 'CASCADE', 'CASCADE');
-
     }
 
     /**

@@ -101,13 +101,13 @@ class KidNote extends \yii\db\ActiveRecord
         return [
             'id',
             'title',
-            'note' => function($model) {
+            'note' => function ($model) {
                 return nl2br($model->note);
             },
-            'date' => function($model) {
+            'date' => function ($model) {
                 return Yii::$app->formatter->asDate($model->created_at, 'long');
             },
-            'createdBy' => function($model) {
+            'createdBy' => function ($model) {
                 return ($model->createdBy ? [
                     'name' => $model->createdBy->name,
                     'image' => $model->createdBy->getThumbUploadUrl('image', 's'),
