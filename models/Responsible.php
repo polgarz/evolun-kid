@@ -28,7 +28,15 @@ class Responsible extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'name' => Yii::t('kid/responsibility', 'Name'),
         ];
     }
 
