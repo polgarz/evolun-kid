@@ -28,6 +28,7 @@ class KidGroup extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name', 'order'], 'required'],
             [['name'], 'string', 'max' => 255],
             [['order'], 'integer'],
         ];

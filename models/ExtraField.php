@@ -15,6 +15,9 @@ use Yii;
  */
 class ExtraField extends \yii\db\ActiveRecord
 {
+    const TYPE_TEXTAREA = 'textarea';
+    const TYPE_TEXTINPUT = 'textinput';
+
     /**
      * {@inheritdoc}
      */
@@ -29,7 +32,25 @@ class ExtraField extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name', 'type'], 'required'],
+            ['type', 'in', 'range' => array_keys(self::getTypeList())],
             [['name', 'type'], 'string', 'max' => 255],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'name' => Yii::t('kid/extra-field', 'Name'),
+            'type' => Yii::t('kid/extra-field', 'Type'),
+        ];
+    }
+
+    public static function getTypeList()
+    {
+        return [
+            self::TYPE_TEXTINPUT => Yii::t('kid/extra-field', 'Textinput'),
+            self::TYPE_TEXTAREA => Yii::t('kid/extra-field', 'Textarea'),
         ];
     }
 

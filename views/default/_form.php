@@ -91,6 +91,8 @@ use unclead\multipleinput\MultipleInputColumn;
                 <?php foreach ($extraFields as $extraField): ?>
                     <?php if ($extraField->type == 'textarea'): ?>
                         <?= $form->field($model, "extraFields[{$extraField->id}]")->textArea(['rows' => 3])->label($extraField->name) ?>
+                    <?php elseif ($extraField->type == 'textinput'): ?>
+                        <?= $form->field($model, "extraFields[{$extraField->id}]")->textInput()->label($extraField->name) ?>
                     <?php endif ?>
                 <?php endforeach ?>
             </div>
