@@ -41,8 +41,8 @@ class KidDocument extends \yii\db\ActiveRecord
                 'class' => \mohorev\file\UploadBehavior::class,
                 'attribute' => 'file',
                 'scenarios' => ['default'],
-                'path' => Yii::$app->params['uploadBasePath'] . '/images/kid/{kid_id}/documents',
-                'url' => Yii::$app->params['uploadBaseUrl'] . '/images/kid/{kid_id}/documents',
+                'path' => Yii::$app->params['uploadBasePath'] . '/files/kid/{kid_id}/documents',
+                'url' => Yii::$app->params['uploadBaseUrl'] . '/files/kid/{kid_id}/documents',
             ],
         ];
     }

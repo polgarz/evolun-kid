@@ -155,7 +155,7 @@ class DefaultController extends Controller
             $return[] = [
                 'id' => $document->id,
                 'name' => $document->name,
-                'date' => Yii::$app->formatter->asDate($document->created_at),
+                'date' => $document->created_at ? Yii::$app->formatter->asDate($document->created_at) : null,
                 'extension' => pathinfo($document->getUploadUrl('file'), PATHINFO_EXTENSION),
                 'createdBy' => ($document->createdBy ? $document->createdBy->name : null),
                 'url' => Url::to(['download', 'id' => $id, 'document_id' => $document->id]),
