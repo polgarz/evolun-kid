@@ -21,4 +21,7 @@ return [
     'Responsibles' => 'Felelősök',
     '{class_number}. class' => '{class_number}. osztály',
     '{class_number}. group' => '{class_number} csoport',
+    'Absences' => 'Hiányzások',
+    'Show less' => 'Mutass kevesebbet',
+    'Show more' => 'Mutass többet',
 ];
