@@ -24,6 +24,8 @@ class DefaultController extends Controller
      */
     public function init() : void
     {
+        parent::init();
+
         $this->setKid($this->module->getKid());
     }
 
