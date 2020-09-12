@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use evolun\kid\helpers\StringHelper;
 ?>
 <div class="box box-default">
     <div class="box-header with-border">
@@ -28,7 +29,7 @@ use yii\helpers\Html;
             <hr />
             <strong><?= $extraFieldValue->extraField->name ?></strong>
             <p class="text-muted">
-                <?= nl2br(Html::encode($extraFieldValue->value)) ?>
+                <?= nl2br(StringHelper::urlToLink(Html::encode($extraFieldValue->value))) ?>
             </p>
         <?php endforeach ?>
 
